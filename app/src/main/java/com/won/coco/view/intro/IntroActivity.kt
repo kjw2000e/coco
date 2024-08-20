@@ -1,8 +1,9 @@
-package com.won.coco
+package com.won.coco.view.intro
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.won.coco.R
 import timber.log.Timber
 
 class IntroActivity : AppCompatActivity() {

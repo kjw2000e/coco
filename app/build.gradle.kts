@@ -31,6 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,6 +46,12 @@ dependencies {
 
     implementation(libs.timber)
     implementation(libs.core.ktx)
+
+    //splash screen
     implementation(libs.core.splash)
+
+    // navigation
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
 
 }
