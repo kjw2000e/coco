@@ -10,6 +10,7 @@ import com.won.coco.R
 import com.won.coco.databinding.FragmentIntro2Binding
 import com.won.coco.databinding.FragmentIntroBinding
 import com.won.coco.view.MainActivity
+import com.won.coco.view.SelectActivity
 
 
 class IntroFragment2 : Fragment() {
@@ -34,7 +35,7 @@ class IntroFragment2 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.nextBtn.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity::class.java)
+            val intent = Intent(requireContext(), SelectActivity::class.java)
             startActivity(intent)
         }
     }

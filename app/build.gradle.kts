@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -53,5 +54,16 @@ dependencies {
     // navigation
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+
+    //coroutine
+    implementation(libs.coroutine)
+    implementation(libs.lifecycle)
+
+    implementation(libs.kotlinx.serialization.json) // 의존성 추가
+
 
 }
