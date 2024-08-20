@@ -42,5 +42,6 @@ dependencies {
 
     implementation(libs.timber)
     implementation(libs.core.ktx)
+    implementation(libs.core.splash)
 
 }

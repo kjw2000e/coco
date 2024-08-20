@@ -7,6 +7,7 @@ constraintlayout = "2.1.4"
 timber = "5.0.1"
 kotlin = "2.0.10"
 coreKtx = "1.13.1"
+splashScreen = "1.0.0"
 
 [libraries]
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -15,6 +16,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 timber = { group = "com.jakewharton.timber" , name = "timber", version.ref= "timber"}
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+core-splash = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

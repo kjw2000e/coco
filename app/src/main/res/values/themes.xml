@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Coco" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Coco" parent="Theme.AppCompat.Light">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryVariant">@color/red</item>
+        <item name="colorOnPrimary">@color/red</item>
+        <item name="windowNoTitle">true</item>
+
     </style>
 
-    <style name="Theme.Coco" parent="Base.Theme.Coco" />
+    <style name="Theme.Coco.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/red</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/graph</item>
+        <item name="postSplashScreenTheme">@style/Theme.Coco</item> <!--splash 끝나고 어떤 테마로 변경할꺼냐 -->
+    </style>
 </resources>
