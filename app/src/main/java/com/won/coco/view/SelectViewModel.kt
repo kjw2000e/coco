@@ -12,7 +12,8 @@ class SelectViewModel() : ViewModel() {
 
     fun getAllCoinList() = viewModelScope.launch {
         val result = networkRepository.getCurrentCoinList()
-        Timber.d(result[0].market)
+
+        Timber.d(result.toString())
     }
 }
 
