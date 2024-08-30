@@ -1,5 +1,7 @@
 package com.won.coco.view
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
@@ -9,17 +11,20 @@ import com.won.coco.repository.NetworkRepository
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class SelectViewModel() : ViewModel() {
+class SelectViewModel : ViewModel() {
 
-    private lateinit var resultList: ArrayList<CurrentPriceItemResult>
-    val networkRepository = NetworkRepository()
+    private var _resultList = MutableLiveData<ArrayList<CurrentPriceItemResult>>()
+    val resultList: LiveData<ArrayList<CurrentPriceItemResult>>
+        get() = _resultList
+
+    private val networkRepository = NetworkRepository()
+
+    private var priceItemList = ArrayList<CurrentPriceItemResult>()
 
     fun getAllCoinList() = viewModelScope.launch {
         val result = networkRepository.getCurrentCoinList()
-        resultList = ArrayList()
 
         for (coin in result.data) {
-
             try {
                 val gson = Gson()
                 val gsonToJson = gson.toJson(result.data.get(coin.key))
@@ -27,11 +32,13 @@ class SelectViewModel() : ViewModel() {
                 val currentPriceItemResult = CurrentPriceItemResult(coin.key, gsonFromJson)
 
                 Timber.d(currentPriceItemResult.toString())
-                resultList.add(currentPriceItemResult)
+                priceItemList.add(currentPriceItemResult)
             } catch (e: Exception) {
                 Timber.e(e)
             }
         }
+
+        _resultList.value = priceItemList
     }
 }
 
